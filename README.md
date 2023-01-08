@@ -1,1 +1,1 @@
-# CUNYCMP167Spring2023
+# CMP167Spring2023
