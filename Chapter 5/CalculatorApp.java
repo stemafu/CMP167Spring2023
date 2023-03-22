@@ -33,70 +33,86 @@ public class CalculatorApp {
 		 * passcode
 		 */
 		Scanner scan = new Scanner(System.in);
-		
+
 		/* At some point in time, we need to improve
 		 * this code now how we are getting the passcode
 		 * one we have learned do while loops
 		 */
-		System.out.print("Enter your passcode: ");
-		String userPasscode = scan.next();
-		
+		//System.out.print("Enter your passcode: ");
+		String userPasscode;
+		//userPasscode= scan.next();
+
 		String correctPasscode = "pass1234";
-		
+		String starOverAgain ="";
+
 		/*If a an incorrect passcode is entered by the user,
 		 * this loops will ensure that the program continues to
 		 * loop through asking the user to enter a passcode
 		 */
+
+		do {
+			do {
+				System.out.print("Enter your passcode: ");
+				userPasscode= scan.next();
+			} while(!userPasscode.equals(correctPasscode));
+
+			/*
 		while(!userPasscode.equals(correctPasscode)) {
 			System.out.println("You entered an incorrect passcode.");
 			System.out.println("Please try again!");
 			System.out.print("Enter your passcode: ");
 			userPasscode = scan.next();
 		}
-		
-		
-		/* The correct passcode has been entered.
-		 * We need to ask for an operation
-		 * 
-		 * We will also need to improve this code
-		 * for getting the operation method once we
-		 * have learned do while loops
-		 */
-		System.out.println("Enter your operation - abs for "
-				+ "absolute, fact for factorial, and sum: ");
-		String operation = scan.next();
-		
-		while(!operation.equals("abs") && 
-				!operation.equals("fact") &&
-				!operation.equals("sum") ) {
+			 */
+
+			/* The correct passcode has been entered.
+			 * We need to ask for an operation
+			 * 
+			 * We will also need to improve this code
+			 * for getting the operation method once we
+			 * have learned do while loops
+			 */
 			System.out.println("Enter your operation - abs for "
 					+ "absolute, fact for factorial, and sum: ");
-			operation = scan.next();
-		}
-		
-		/*When you get here it means the correct operation, was
-		entered
-		*/
-		System.out.print("enter a number: ");
-		int num = scan.nextInt();
-		int answer = 0;
-		
-		if (operation.equals("abs")) {
-			answer = Math.abs(num);
-		} else if (operation.equals("fact")) {
-			/* We will finish this part in class on
-			 * Monday
-			 */
-		} else if (operation.equals("sum")) {
-			answer = 0;
-			int count = 1;
-			while(count <= num) {
-				answer = answer + count;
-				count++;
+			String operation = scan.next();
+
+			while(!operation.equals("abs") && 
+					!operation.equals("fact") &&
+					!operation.equals("sum") ) {
+				System.out.println("Enter your operation - abs for "
+						+ "absolute, fact for factorial, and sum: ");
+				operation = scan.next();
 			}
-		}
+
+			/*When you get here it means the correct operation, was
+		entered
+			 */
+			System.out.print("enter a number: ");
+			int num = scan.nextInt();
+			int answer = 0;
+
+			if (operation.equals("abs")) {
+				answer = Math.abs(num);
+				System.out.println("Result: " + answer);
+			} else if (operation.equals("fact")) {
+				/* We will finish this part in class on
+				 * Monday
+				 */
+			} else if (operation.equals("sum")) {
+				answer = 0;
+				int count = 1;
+				while(count <= num) {
+					answer = answer + count;
+					count++;
+				}
+			}
+
+			System.out.println("Would you like to do this over again?");
+			starOverAgain = scan.next();
+		}while(starOverAgain.equals("yes"));
 		
 		
+
 	}
 
 }
