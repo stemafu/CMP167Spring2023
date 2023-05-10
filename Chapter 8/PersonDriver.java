@@ -7,10 +7,36 @@ public class PersonDriver {
 		 */
 		
 		Person person1 = new Person();
+		
 		Person person2 = new Person();
+		System.out.println(person1);
+		System.out.println(person2);
+		
+		if(person1 == person2) {
+			System.out.println("equal");
+		}else {
+			System.out.println("not equal");
+		}
+		
+		
 		Person person3 = new Person();
 		Person person4 = new Person();
 		Person person5 = new Person();
+		
+		Person person7 = null;
+		
+		System.out.println(person1.equals(person2));
+		
+		System.out.println(person1.equals(person7));
+		
+		//if(person1 == person2) {
+			// they are equal...
+		//}
+		
+		person1.populateCourses();
+		
+		System.out.println(person1.getSomeRandomCourse() );
+		System.out.println(person1);
 		//System.out.println(person1.name);
 		
 		/* I want to call an instance method
@@ -29,6 +55,12 @@ public class PersonDriver {
 		
 		//person2.age = -20;
 		person2.display();
+		
+		
+		
+		
+		Person person6 = new Person("Ryan");
+		person6.display();
 	}
 
 }
